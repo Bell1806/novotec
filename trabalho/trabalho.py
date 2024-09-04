@@ -50,7 +50,6 @@ def resultado():
 
     window.close()
 
-hkkhh
 
 
 aluno()
