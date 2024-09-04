@@ -5,10 +5,11 @@ def aluno():
 
 
     # All the stuff inside your window.
-    layout = [  [sg.Text("Digite o nome do aluno"),sg.InputText()],
-                [sg.Text("Digite a primeira nota"),sg.InputText()],
-                [sg.Text("Digite a segunda nota"), sg.InputText()], 
-                [sg.Button('SIM'),sg.Button('NÃO')]]
+    layout = [  [sg.Text("Digite o nome do aluno"),sg.InputText(key="aluno")],
+                [sg.Text("Digite a primeira nota"),sg.InputText(key="primeira nota")],
+                [sg.Text("Digite a segunda nota"), sg.InputText(key="segunda nota")], 
+                [sg.Text('', key='erro')],
+                [sg.Button('SIM'),sg.Button('NÃO'), sg.Button('ADICIONAR')]]
 
     # Create the Window
     window = sg.Window('Hello Example', layout)
@@ -23,6 +24,19 @@ def aluno():
         if event== 'SIM':
            window.close() 
            resultado()
+
+
+        if event == 'ADICIONAR':
+            nome_alunos = values["aluno"]
+            nota1 = values["primeira nota"]
+            nota2= values["segunda nota"]
+            
+            if len(nome_alunos) < 3:
+                window['erro'].update('O nome está errado')
+
+                if len(nota1) <= 10:
+                    window['erro'].update('A nota não é válida')
+
     window.close()
 
 
