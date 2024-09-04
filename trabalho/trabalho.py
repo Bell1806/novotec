@@ -31,7 +31,7 @@ def resultado():
     import PySimpleGUI as sg
 
     # All the stuff inside your window.
-    layout = [  [sg.Text("What's your name?")],
+    layout = [  [sg.Text("Digite o nome do aluno")],
                 [sg.InputText()],
                 [sg.Button('Ok'), sg.Button('Cancel')] ]
 
@@ -50,6 +50,7 @@ def resultado():
 
     window.close()
 
+hkkhh
 
 
 aluno()
