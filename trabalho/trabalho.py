@@ -37,6 +37,9 @@ def aluno():
                 if len(nota1) <= 10:
                     window['erro'].update('A nota não é válida')
 
+                    if len(nota2) <= 10:
+                        window['erro'].update('A nota não é válida')
+
     window.close()
 
 
